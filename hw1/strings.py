@@ -4,17 +4,16 @@ def str1(a):
 
 def str2(a, b):
   """ Given strings a and b, returns the string abbba """
-
-  return ''
+  return a + b * 3 + a
 
 def str3(a, b, c):
   """ Given strings a, b, and c, returns the string abcabc """
-
-  return ''
+  return (a + b + c) * 2
 
 def str4(a, b, c, d):
   """ Given strings a, b, c, and d, returns:
       ab, if c and d are of the same length
       bbcc, otherwise   """
-
-  return ''
+  if len(c) == len(d):
+    return a + b
+  return b * 2 + c * 2

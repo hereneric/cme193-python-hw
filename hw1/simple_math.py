@@ -8,8 +8,10 @@ def seq_add(start, end, k):
       seq_add(-4, 8, 5) returns -4 + 1 + 6 = 3
 
       You can assume start <= end and that k > 0 """
-
-  return 0
+  result = 0
+  for i in range(start, end + 1, k):
+    result += i
+  return result
 
 def fact(n):
   """ Returns n!, the factorial of n.  If n <= 0, return 0.  For example:
@@ -19,5 +21,9 @@ def fact(n):
       You can assume that n is an integer.
 
       You are not allowed to use Python's math library.  """
-
+  factorial = 1
+  if n > 0:
+    for i in xrange(1, n + 1):
+      factorial *= i
+    return factorial
   return 0
