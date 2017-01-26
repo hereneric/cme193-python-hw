@@ -10,11 +10,7 @@ return value is a dictionary with keys 'rho', 'phi', and 'z'  with
        corresponding values as cylindrical coordinate values
 '''
 def sphere2cyl(coords):
-  # IMPLEMENT THIS FUNCTION
-
-
-  # REMOVE THIS
-  return {}
+  return cart2cyl(sphere2cart(coords))
 
 
 '''
@@ -27,11 +23,16 @@ return value is a dictionary with keys 'x', 'y', and 'z'  with
        corresponding values as cartesian coordinate values
 '''
 def sphere2cart(coords):
-  # IMPLEMENT THIS FUNCTION
+  r = coords['r']
+  theta = coords['theta']
+  phi = coords['phi']
 
+  cart_points = {}
 
-  # REMOVE THIS
-  return {}
+  cart_points['x'] = r * math.sin(theta) * math.cos(phi)
+  cart_points['y'] = r * math.sin(theta) * math.sin(phi)
+  cart_points['z'] = r * math.cos(theta)
+  return cart_points
 
 
 '''
@@ -44,11 +45,7 @@ return value is a dictionary with keys 'r', 'theta', and 'phi'  with
        corresponding values as spherical coordinate values
 '''
 def cyl2sphere(coords):
-  # IMPLEMENT THIS FUNCTION
-
-
-  # REMOVE THIS
-  return {}
+  return cart2sphere(cyl2cart(coords))
 
 
 '''
@@ -61,12 +58,16 @@ return value is a dictionary with keys 'x', 'y', and 'z'  with
        corresponding values as cartesian coordinate values
 '''
 def cyl2cart(coords):
-  # IMPLEMENT THIS FUNCTION
+  rho = coords['rho']
+  phi = coords['phi']
+  z = coords['z']
 
+  cart_points = {}
 
-  # REMOVE THIS
-  return {}
-
+  cart_points['x'] = rho * math.cos(phi)
+  cart_points['y'] = rho * math.sin(phi)
+  cart_points['z'] = z
+  return cart_points
 
 '''
 Convert a dictionary of cartesian coordinates to a dictionary of
@@ -103,12 +104,16 @@ return value is a dictionary with keys 'rho', 'phi', and 'z'  with
        corresponding values as cylindrical coordinate values
 '''
 def cart2cyl(coords):
-  # IMPLEMENT THIS FUNCTION
+  x = coords['x']
+  y = coords['y']
+  z = coords['z']
 
+  cyl_points = {}
 
-  # REMOVE THIS
-  return {}
-
+  cyl_points['rho'] = math.sqrt(x ** 2 + y ** 2)
+  cyl_points['phi'] = math.atan2(y, x)
+  cyl_points['z'] = z
+  return cyl_points
 
 '''
 Determine the type of the coordinate dictionary.
@@ -124,8 +129,12 @@ As an example:
   print detect_type(point2) # should print 'cyl'
 '''
 def detect_type(coords):
-  # IMPLEMENT THIS FUNCTION
-
-  
-  # REMOVE THIS
-  return 'cart'
+  keys = coords.keys()
+  print keys
+  if 'x' in keys and 'y' in keys and 'z' in keys:
+    return 'cart'
+  elif 'r' in keys and 'theta' in keys and 'phi' in keys:
+    return 'sphere'
+  elif 'rho' in keys and 'phi' in keys and 'z' in keys:
+    return 'cyl'
+  return None

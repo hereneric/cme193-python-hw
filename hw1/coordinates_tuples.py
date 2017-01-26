@@ -7,12 +7,7 @@ coords is a tuple in (r, theta, phi) form
 return value is a tuple in (rho, phi, z) form
 '''
 def sphere2cyl(coords):
-  # IMPLEMENT THIS FUNCTION
-
-
-  # REMOVE THIS
-  return (0, 0, 0)
-
+  return cart2cyl(sphere2cart(coords))
 
 '''
 Convert a tuple of spherical coordinates to a tuple of cartesian coordinates.
@@ -21,12 +16,11 @@ coords is a tuple in (r, theta, phi) form
 return value is a tuple in (x, y, z) form
 '''
 def sphere2cart(coords):
-  # IMPLEMENT THIS FUNCTION
-
-
-  # REMOVE THIS
-  return (0, 0, 0)
-
+  r, theta, phi = coords
+  x = r * math.sin(theta) * math.cos(phi)
+  y = r * math.sin(theta) * math.sin(phi)
+  z = r * math.cos(theta)
+  return (x, y, z)
 
 '''
 Convert a tuple of cylindrical coordinates to a tuple of spherical coordinates.
@@ -35,11 +29,7 @@ coords is a tuple in (rho, phi, z) form
 return value is a tuple in (r, theta, phi) form
 '''
 def cyl2sphere(coords):
-  # IMPLEMENT THIS FUNCTION
-
-
-  # REMOVE THIS
-  return (0, 0, 0)
+  return cart2sphere(cyl2cart(coords))
 
 
 '''
@@ -49,11 +39,10 @@ coords is a tuple in (rho, phi, z) form
 return value is a tuple in (x, y, z) form
 '''
 def cyl2cart(coords):
-  # IMPLEMENT THIS FUNCTION
-
-
-  # REMOVE THIS
-  return (0, 0, 0)
+  rho, phi, z = coords
+  x = rho * math.cos(phi)
+  y = rho * math.sin(phi)
+  return (x, y, z)
 
 
 '''
@@ -78,12 +67,10 @@ coords is a tuple in (x, y, z) form
 return value is a tuple in (rho, phi, z) form
 '''
 def cart2cyl(coords):
-  # IMPLEMENT THIS FUNCTION
-
-
-  # REMOVE THIS
-  return (0, 0, 0)
-
+  x, y, z = coords
+  rho = math.sqrt(x ** 2 + y ** 2)
+  phi = math.atan2(y, x)
+  return (rho, phi, z)
 
 '''
 Convert a new list of points from one type to another
@@ -96,8 +83,4 @@ def convert_points(points, type='cart', new_type='cart'):
   if type is new_type:
     # Create a copy instead of returning the exact list
     return points[:]
-
-  # FINISH THIS FUNCTIONS
-  # HINT: it may be useful to use a list comprehension
-
-  return []
+  return eval('map(' + type + '2' + new_type + ', points)')
