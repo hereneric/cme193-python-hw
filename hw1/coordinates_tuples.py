@@ -83,4 +83,5 @@ def convert_points(points, type='cart', new_type='cart'):
   if type is new_type:
     # Create a copy instead of returning the exact list
     return points[:]
+  # use map() to apply the conversion to each tuple in the list
   return eval('map(' + type + '2' + new_type + ', points)')

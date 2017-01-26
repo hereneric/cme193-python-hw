@@ -9,7 +9,7 @@ def seq_add(start, end, k):
 
       You can assume start <= end and that k > 0 """
   result = 0
-  for i in range(start, end + 1, k):
+  for i in xrange(start, end + 1, k):
     result += i
   return result
 

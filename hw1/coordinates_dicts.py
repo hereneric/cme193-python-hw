@@ -27,6 +27,7 @@ def sphere2cart(coords):
   theta = coords['theta']
   phi = coords['phi']
 
+  # initializing empty dictionary
   cart_points = {}
 
   cart_points['x'] = r * math.sin(theta) * math.cos(phi)
@@ -62,6 +63,7 @@ def cyl2cart(coords):
   phi = coords['phi']
   z = coords['z']
 
+  # initializing empty dictionary
   cart_points = {}
 
   cart_points['x'] = rho * math.cos(phi)
@@ -108,6 +110,7 @@ def cart2cyl(coords):
   y = coords['y']
   z = coords['z']
 
+  # initialize empty dictionary
   cyl_points = {}
 
   cyl_points['rho'] = math.sqrt(x ** 2 + y ** 2)
@@ -130,7 +133,7 @@ As an example:
 '''
 def detect_type(coords):
   keys = coords.keys()
-  print keys
+  # detect type by checking the keys in the coords dict
   if 'x' in keys and 'y' in keys and 'z' in keys:
     return 'cart'
   elif 'r' in keys and 'theta' in keys and 'phi' in keys:
