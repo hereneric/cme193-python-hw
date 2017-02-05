@@ -76,20 +76,3 @@ class ERGraph(Graph):
 					mat[i][j] = 1
 					mat[j][i] = 1
 		Graph.__init__(self, mat)
-
-g1 = Graph([[0,1,1],[1,0,0],[1,0,0]])
-g2 = Graph([[0,1,1],[1,0,1],[1,1,0]])
-g1.add_node([1])
-g2.add_node([1])
-print g1.get_matrix()
-print g2.get_matrix()
-g3 = g1 + g2
-# print g3.get_matrix()
-# print g1.get_neighbors({1,2})
-print g3.laplacian()
-print g3.laplacian_eig()
-print np.linalg.eig(g3.laplacian())
-print g3.adjacency_eig()
-print np.linalg.eig(g3.matrix)
-
-print ERGraph(10, 0.1)
