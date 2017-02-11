@@ -1,3 +1,7 @@
+"""
+zip and unzip using zip()
+"""
+
 def coordinate(list_x, list_y):
     return zip(list_x, list_y)
 

@@ -6,5 +6,6 @@ n = 3
 A = np.random.rand(m, n)
 b = np.random.rand(m, 1)
 lm = LinearRegression()
+# scipy linear regression
 lm.fit(A, b)
 print lm.residues_

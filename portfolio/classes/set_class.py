@@ -1,4 +1,8 @@
 class mySet:
+    """
+    Class of Set that support add, issubset, issuperset
+    union and intersection operations
+    """
     def __init__(self):
         self.dict = {}
 

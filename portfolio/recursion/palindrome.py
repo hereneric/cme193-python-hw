@@ -1,4 +1,7 @@
-def indentity_matrix(length):
+def _identity_matrix(length):
+	"""
+	return an identity matrix of size length^2
+	"""
 	table = []
 	for i in xrange(length):
 		row = []
@@ -11,8 +14,11 @@ def indentity_matrix(length):
 	return table
 
 def palindrome(string):
+	"""
+	Return the longest palindromic subsequence
+	"""
 	length = len(string)
-	table = indentity_matrix(length)
+	table = _identity_matrix(length)
 	diff = 1
 	maxlen = -1
 	p = -1
@@ -39,6 +45,6 @@ def palindrome(string):
 			result = string[q] + result
 			q -= 1
 			p += 1
-	print result[::-1] + string[q] + result
+	return result[::-1] + string[q] + result
 
-palindrome('abcdcba')
+print palindrome('abcdcba')

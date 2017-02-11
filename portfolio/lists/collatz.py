@@ -1,4 +1,7 @@
 def collatz(x):
+    """
+    return a list of collatz sequence
+    """
     sequence = []
     while x != 1:
 	    sequence.append(x)
@@ -10,6 +13,9 @@ def collatz(x):
     return sequence
 
 def find_longest(x):
+    """
+    Find the longest collatz sequence in numbers 1 to x
+    """
     max_len = -1
     result = -1
     for i in xrange(1, x):

@@ -1,6 +1,9 @@
 import random
 
 def generate(n, a, b, filename):
+    """
+    Generate random numbers and write to file
+    """
     with open(filename, 'w') as f:
         for i in xrange(n):
             f.write(str(random.randint(a, b)) + '\n')

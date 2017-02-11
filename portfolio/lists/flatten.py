@@ -1,4 +1,7 @@
 def flatten(l):
+	"""
+	Recursively flatten list
+	"""
     result = []
     for element in l:
         if type(element) != list:

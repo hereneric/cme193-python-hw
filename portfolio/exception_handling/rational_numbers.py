@@ -1,4 +1,7 @@
 class Rational:
+    """
+    Rational number with exception handling
+    """
     def __init__(self, p, q=1):
         if q == 0:
             raise ZeroDivisionError('denominator is zero')

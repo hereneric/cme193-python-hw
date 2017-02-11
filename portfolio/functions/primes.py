@@ -1,4 +1,7 @@
 def is_prime(n):
+    """
+    return true if n is prime number
+    """
     if n == 2 or n == 3:
         return True
     elif (n - 1) % 6 != 0 and (n + 1) % 6 != 0:
@@ -9,6 +12,9 @@ def is_prime(n):
     return True
 
 def return_primes(n):
+    """
+    return a list of primes up to n
+    """
     result = []
     for i in range(2, n):
         if is_prime(i):
@@ -16,6 +22,9 @@ def return_primes(n):
     return result
 
 def return_n_primes(n):
+    """
+    return n primes from 2
+    """
     result = []
     count = 0
     num = 2

@@ -1,4 +1,7 @@
 def root(f, a, b):
+    """
+    Find the root of a polynomials
+    """
     if (f(a) > 0 and f(b) > 0) or (f(a) < 0 and f(b) < 0):
         print 'function evals have same sign'
     c = (a + b) / 2

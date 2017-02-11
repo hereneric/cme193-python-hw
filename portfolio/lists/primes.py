@@ -1,3 +1,6 @@
+"""
+return primes with list
+"""
 def is_prime(n):
     if n == 2 or n == 3:
         return True

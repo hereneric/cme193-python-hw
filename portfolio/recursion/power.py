@@ -1,4 +1,7 @@
 def power(a, b):
+	"""
+	a to the power of b recursive
+	"""
 	a = float(a)
 	if b == 0:
 		return 1

@@ -1,10 +1,12 @@
 def my_max1(x, y):
+	# with else
     if x > y:
         return x
     else:
         return y
 
 def my_max2(x, y):
+	# without else
     if x > y:
         return x
     return y

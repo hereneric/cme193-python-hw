@@ -1,6 +1,10 @@
 import time
 
 def fibo_recur(n):
+	"""
+	recursively compute fibonacci sequence
+	slowest way
+	"""
 	if n < 1:
 		return 0
 	elif n == 1:
@@ -9,6 +13,10 @@ def fibo_recur(n):
 		return fibo_recur(n-1) + fibo_recur(n-2)
 
 def fibo_nonrecur(n):
+	"""
+	iteratively compute fibonacci sequence
+	fast
+	"""
 	if n < 1:
 		return 0
 	elif n == 1:
@@ -22,6 +30,10 @@ def fibo_nonrecur(n):
 	return curr
 
 def fibo_recur_improved(n):
+	"""
+	recursive solution with intermediate results saved in dictionary
+	quite fast
+	"""
 	dic = {}
 	dic[0] = 0
 	dic[1] = 1

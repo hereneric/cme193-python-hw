@@ -1,3 +1,6 @@
+"""
+purify list iterative and recursive
+"""
 def purify_iteration(l):
 	result = []
 	for num in l:

@@ -1,10 +1,16 @@
 def l1(tuple_x, tuple_y):
+	"""
+	l1 norm
+	"""
     sum = 0
     for i in range(len(tuple_x)):
         sum += abs(tuple_x[i] - tuple_y[i])
     return sum
 
 def l2(tuple_x, tuple_y):
+	"""
+	l2 norm
+	"""
     sum = 0
     for i in range(len(tuple_x)):
         sum += (tuple_x[i] - tuple_y[i]) ** 2

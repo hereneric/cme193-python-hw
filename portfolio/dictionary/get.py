@@ -1,4 +1,7 @@
 from collections import *
+"""
+Dictionary get() exercise
+"""
 
 def histogram(l):
     table = {}

@@ -1,4 +1,7 @@
 def reverse_lookup(dic, x):
+	"""
+	Find key by value
+	"""
     result = []
     for key, val in dic.iteritems():
         if val == x:

@@ -1,4 +1,7 @@
 def fact(n):
+	"""
+	recursively compute factorial
+	"""
 	if n < 1:
 		return 1
 	else:

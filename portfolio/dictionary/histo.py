@@ -1,6 +1,7 @@
 from collections import *
 
 def histogram(l):
+    # not use counter
     table = {}
     for element in l:
         if element not in table:
@@ -10,6 +11,7 @@ def histogram(l):
     return table
 
 def histogram_counter(l):
+    # Use counter
     cnt = Counter()
     for element in l:
         cnt[element] += 1

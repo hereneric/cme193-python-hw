@@ -9,9 +9,13 @@ y = X.dot(b) + z
 print y.shape
 
 def f(x):
+	"""
+	loss function
+	"""
 	return np.linalg.norm(X.dot(x) - y, 2)
 
 x0 = np.random.rand(10,1)
+# minimize loss function
 b_opt = fmin(lambda x: f(x), x0)
 
 line_up, = plt.plot(range(len(b)), b, 'rx')

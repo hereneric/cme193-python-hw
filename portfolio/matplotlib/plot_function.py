@@ -7,6 +7,7 @@ def f(x):
 x = np.arange(0, 2, 0.01);
 y = f(x)
 
+# plot the function above
 plt.plot(x, y)
 plt.ylabel('y')
 plt.xlabel('x')

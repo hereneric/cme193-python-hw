@@ -1,3 +1,6 @@
+"""
+product of numbers in the list iterative and recursive
+"""
 def product_iteration(l):
 	result = 1.0
 	for num in l:

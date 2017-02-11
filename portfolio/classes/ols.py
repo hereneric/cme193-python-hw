@@ -1,6 +1,9 @@
 from sklearn.linear_model import LinearRegression
 
 class OLS:
+	"""
+	Ordinary Least Square LinearRegression
+	"""
 	def __init__(self):
 		self.lm = LinearRegression()
 
